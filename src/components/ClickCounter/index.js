@@ -6,9 +6,7 @@ class ClickCounter extends Component {
   state = {count: 0}
 
   onIncrement = () => {
-    this.setState(preState => {
-      return {count: preState + 1}
-    })
+    this.setState(prevState => ({count: prevState.count + 1}))
   }
 
   render() {
@@ -20,7 +18,7 @@ class ClickCounter extends Component {
           times
         </h1>
         <p className="paragraph">Click the button to increase the count!</p>
-        <button className="button" onClick="onIncrement">
+        <button className="button" onClick="onIncrement" type="button">
           Click Me!
         </button>
       </div>
